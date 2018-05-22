@@ -4,9 +4,10 @@ buildscript {
         mavenCentral()
         maven { url 'https://maven.fabric.io/public' }
         mavenLocal()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.3.0'
+        classpath 'com.android.tools.build:gradle:3.1.2'
         classpath 'io.fabric.tools:gradle:1.19.2'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
     }
@@ -21,6 +22,7 @@ repositories {
     mavenLocal()
     jcenter()
     maven { url 'https://maven.fabric.io/public' }
+    google()
 }
 
 def computeVersionCode() {
@@ -58,7 +60,7 @@ android {
         // buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
 
         manifestPlaceholders = [
-                fabricCrashlyticsApiKey: crashlyticsApiKey   // Set this in your ~/.gradle/gradle.properties as: crashlyticsApiKey or use "$System.env.CRASHLYTICS_API_KEY"  to use a env variable (and then set that value, of course)
+                fabricCrashlyticsApiKey: "3a56bbcabd3c0cb3ab5a6af510a8a03b9c6bc2cf"   // Set this in your ~/.gradle/gradle.properties as: crashlyticsApiKey or use "$System.env.CRASHLYTICS_API_KEY"  to use a env variable (and then set that value, of course)
         ]
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
